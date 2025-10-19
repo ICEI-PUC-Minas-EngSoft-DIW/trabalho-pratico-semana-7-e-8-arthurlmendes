@@ -20,16 +20,16 @@ Leia o enunciado completo no Canvas.
 ## Print da Home-Page
 
 <<  COLOQUE A IMAGEM AQUI >>
-![Print da Homepage](imagens/r5.jpeg)
+![Print da Homepage](public/imagens/r5.jpeg)
 
 
 ## Print da página de detalhes do item
 
 <<  COLOQUE A IMAGEM AQUI >>
-![Detalhes](imagens/r1.jpeg)
-![Detalhes](imagens/r2.png)
-![Detalhes](imagens/r3.png)
-![Detalhes](imagens/r4.png)
+![Detalhes 1](public/r2.png)
+![Detalhes 2](public/r3.png) 
+![Detalhes 3](public/r4.png)
+![Detalhes 4](public/r1.jpeg)
 
 ## Cole aqui abaixo a estrutura JSON utilizada no app.js
 
