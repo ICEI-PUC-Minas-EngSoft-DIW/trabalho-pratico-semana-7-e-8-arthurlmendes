@@ -1,89 +1,126 @@
-// Estrutura de dados JSON com as IAs
-const dados = [
-  {
-    id: 1,
-    titulo: "ChatGPT",
-    descricao: "Um dos modelos de linguagem mais avançados do mundo, criado pela OpenAI.",
-    conteudo: "O ChatGPT é uma IA baseada em modelos de linguagem que utiliza aprendizado profundo para gerar textos coerentes e naturais. É amplamente usado em assistentes virtuais, educação e criação de conteúdo.",
-    autor: "OpenAI",
-    data: "2022-11-30",
-   
-  },
-  {
-    id: 2,
-    titulo: "Midjourney",
-    descricao: "IA especializada na criação de imagens artísticas a partir de texto.",
-    conteudo: "A Midjourney utiliza redes neurais para interpretar descrições textuais e gerar imagens de alta qualidade. Tornou-se popular por criar arte digital impressionante e criativa.",
-    autor: "Midjourney Inc.",
-    data: "2022-07-15",
-    
-  },
-  {
-    id: 3,
-    titulo: "GitHub Copilot",
-    descricao: "Assistente de programação que sugere códigos automaticamente.",
-    conteudo: "O GitHub Copilot, desenvolvido pela GitHub e OpenAI, usa IA para prever e sugerir trechos de código em tempo real, aumentando a produtividade de desenvolvedores.",
-    autor: "GitHub e OpenAI",
-    data: "2021-06-29",
-    
-  },
-  {
-    id: 4,
-    titulo: "Google Gemini",
-    descricao: "Plataforma de IA multimodal criada pelo Google DeepMind.",
-    conteudo: "O Gemini combina texto, imagem, áudio e vídeo em um único modelo. É uma das principais apostas do Google na corrida das inteligências artificiais generativas.",
-    autor: "Google DeepMind",
-    data: "2024-01-10",
-    
-  }
+// app.js
+
+const DADOS_AVENTURAS = [
+    {
+        "id": 1,
+        "titulo": "Trilha da Pedra do Baú",
+        "localizacao": "São Bento do Sapucaí, SP",
+        "dificuldade": "Moderada",
+        "distancia": "8 km (ida e volta)",
+        "tempo_estimado": "4 horas",
+        "descricao_breve": "Uma vista panorâmica espetacular espera por você no topo.",
+        "conteudo_completo": "A Trilha da Pedra do Baú é uma das mais famosas do estado, oferecendo trechos de escalaminhada com cabos de aço. É uma experiência desafiadora, mas a recompensa no topo, com a vista 360°, vale o esforço. Recomenda-se ir com guia e verificar as condições climáticas antes de iniciar a subida. A trilha é bem sinalizada.",
+        "imagem": "https://picsum.photos/id/401/400/250"
+    },
+    {
+        "id": 2,
+        "titulo": "Pico da Bandeira",
+        "localizacao": "Serra do Caparaó, MG/ES",
+        "dificuldade": "Difícil",
+        "distancia": "12 km (ida e volta)",
+        "tempo_estimado": "6 a 8 horas",
+        "descricao_breve": "Conquiste o terceiro ponto mais alto do Brasil e veja o nascer do sol.",
+        "conteudo_completo": "O Pico da Bandeira é um desafio de alta altitude (2.892 metros), exigindo preparo físico e equipamentos adequados para o frio. A subida noturna é popular para ver o sol nascer do cume, um espetáculo inesquecível. O Parque Nacional do Caparaó exige registro prévio para a visitação e geralmente a presença de um guia.",
+        "imagem": "https://picsum.photos/id/165/400/250"
+    },
+    {
+        "id": 3,
+        "titulo": "Camping Vale do Pati",
+        "localizacao": "Chapada Diamantina, BA",
+        "dificuldade": "Extrema (Trekking)",
+        "distancia": "70 km (Trekking completo)",
+        "tempo_estimado": "5 dias",
+        "descricao_breve": "Experiência imersiva no coração da Chapada Diamantina.",
+        "conteudo_completo": "O Vale do Pati não é apenas uma trilha, mas um trekking de múltiplos dias. A área é remota e a hospedagem é feita em casas de nativos (campings rústicos ou quartos). É considerado um dos trekkings mais bonitos do Brasil e exige planejamento logístico rigoroso e contratação de guia local.",
+        "imagem": "https://picsum.photos/id/1020/400/250"
+    },
+    {
+        "id": 4,
+        "titulo": "Camping da Pousada da Praia",
+        "localizacao": "Paraty, RJ",
+        "dificuldade": "Fácil",
+        "distancia": "1 km da praia",
+        "tempo_estimado": "Aberto 24h",
+        "descricao_breve": "Camping com infraestrutura completa perto do mar.",
+        "conteudo_completo": "Perfeito para quem busca conforto e proximidade com o mar. O camping oferece banheiros limpos, energia elétrica, área de convivência e segurança. Ideal para famílias ou para quem está começando a acampar. Está localizado a poucos minutos do centro histórico de Paraty.",
+        "imagem": "https://picsum.photos/id/103/400/250"
+    }
 ];
 
-// Detectar qual página está aberta
-const pagina = window.location.pathname.split("/").pop();
+// --- Funções de Carregamento ---
 
-if (pagina === "index.html" || pagina === "") {
-  montarHome();
-} else if (pagina === "detalhes.html") {
-  montarDetalhes();
+function carregarItensHome() {
+    const containerTrilhas = document.getElementById('trilhas-container');
+    if (!containerTrilhas) return; 
+
+    let htmlContent = '';
+    
+    DADOS_AVENTURAS.forEach(item => {
+        // CORRIGIDO: Adicionada a classe de coluna Bootstrap (col-6 col-md-4 col-lg-3)
+        htmlContent += `
+            <article class="col-6 col-md-4 col-lg-3 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="${item.imagem}" class="card-img-top" alt="${item.titulo}">
+                    <div class="card-body text-start">
+                        <h5 class="card-title text-success fw-bold">${item.titulo}</h5>
+                        <p class="card-text">${item.descricao_breve}</p>
+                        <a href="detalhes.html?id=${item.id}" class="btn btn-primary mt-auto">Ver Detalhes</a>
+                    </div>
+                </div>
+            </article>
+        `;
+    });
+
+    containerTrilhas.innerHTML = htmlContent;
 }
 
-// Função para montar os cards na página inicial
-function montarHome() {
-  const conteudo = document.getElementById("conteudo");
-  dados.forEach(item => {
-    const card = document.createElement("div");
-    card.className = "card";
-    card.innerHTML = `
-      <a href="detalhes.html?id=${item.id}">
-        <img src="${item.imagem}" alt="${item.titulo}">
-        <div class="card-content">
-          <h3>${item.titulo}</h3>
-          <p>${item.descricao}</p>
+function carregarDetalhes() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const itemId = urlParams.get('id');
+    const item = DADOS_AVENTURAS.find(a => a.id == itemId);
+
+    const container = document.getElementById('detalhes-item');
+    
+    if (!item) {
+        container.innerHTML = '<h3 class="text-danger">Aventura não encontrada!</h3>';
+        document.title = "Erro - Item Não Encontrado";
+        return;
+    }
+
+    document.title = `${item.titulo} - Detalhes da Aventura`;
+    
+    // Monta o HTML com os detalhes do item
+    container.innerHTML = `
+        <h2 class="text-success mb-4 display-5">${item.titulo}</h2>
+        
+        <div class="row mb-4">
+            <div class="col-lg-6 mb-3">
+                <img src="${item.imagem}" class="img-fluid rounded shadow" alt="${item.titulo}">
+            </div>
+            <div class="col-lg-6">
+                <p class="lead">${item.descricao_breve}</p>
+                
+                <hr>
+
+                <p><strong>Localização:</strong> ${item.localizacao}</p>
+                <p><strong>Dificuldade:</strong> <span class="badge bg-warning text-dark fs-6">${item.dificuldade}</span></p>
+                <p><strong>Distância:</strong> ${item.distancia}</p>
+                <p><strong>Tempo Estimado:</strong> ${item.tempo_estimado}</p>
+            </div>
         </div>
-      </a>
+
+        <h3 class="text-primary mt-4">Descrição Completa:</h3>
+        <p>${item.conteudo_completo}</p>
     `;
-    conteudo.appendChild(card);
-  });
 }
 
-// Função para montar a página de detalhes
-function montarDetalhes() {
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get("id");
-  const item = dados.find(d => d.id == id);
+// --- Lógica de Roteamento Simples ---
 
-  if (item) {
-    const detalhes = document.getElementById("detalhes");
-    detalhes.innerHTML = `
-      <div class="card">
-        <img src="${item.imagem}" alt="${item.titulo}">
-        <div class="card-content">
-          <h2>${item.titulo}</h2>
-          <p><strong>Autor:</strong> ${item.autor}</p>
-          <p><strong>Data:</strong> ${item.data}</p>
-          <p>${item.conteudo}</p>
-        </div>
-      </div>
-    `;
-  }
-}
+// Verifica o título da página para saber qual função chamar
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.title.includes("Aventure-se na Natureza")) {
+        carregarItensHome();
+    } else if (document.title.includes("Detalhes da Aventura")) {
+        carregarDetalhes();
+    }
+});

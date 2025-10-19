@@ -1,23 +1,80 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AIpedia - Enciclopédia Interativa de IA</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventure-se na Natureza - Guia de Trilhas e Acampamentos</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>🤖 AIpedia</h1>
-    <p>Descubra as principais Inteligências Artificiais do mundo moderno</p>
-  </header>
 
-  <main id="conteudo"></main>
+    <header class="site-header sticky-top">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center py-3">
+            <a href="index.html" class="logo text-white text-decoration-none">
+                <h1 class="fs-4 m-0">Aventure-se</h1>
+            </a>
+            <nav class="main-nav my-2 my-md-0">
+                <ul class="nav">
+                    <li class="nav-item"><a href="index.html" class="nav-link text-white fw-bold">Início</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-white fw-bold">Trilhas</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-white fw-bold">Acampamentos</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-white fw-bold">Dicas</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-white fw-bold">Contato</a></li>
+                </ul>
+            </nav>
+            <form class="d-flex my-2 my-md-0">
+                <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">🔍</button>
+            </form>
+        </div>
+    </header>
 
-  <footer>
-    <p>Desenvolvido por Arthur Mendes - DIW Semana 7 e 8</p>
-  </footer>
+    <main class="container my-5">
+        <section class="hero-section text-center p-5 mb-5 rounded">
+            <div class="hero-content bg-dark bg-opacity-50 p-4 rounded d-inline-block">
+                <h2 class="display-5 text-white fw-bold">Descubra sua Próxima Aventura!</h2>
+                <p class="lead text-white mb-4">Explore trilhas desafiadoras e acampamentos tranquilos pelo Brasil.</p>
+                <a href="#trilhas-dinamicas" class="btn btn-warning btn-lg fw-bold">Ver Trilhas Populares</a>
+            </div>
+        </section>
 
-  <script src="app.js"></script>
+        <section class="section-destaque trilhas-destaque text-center mb-5">
+            <h2 class="display-6 fw-bold text-success mb-4" id="trilhas-dinamicas">Trilhas e Acampamentos em Destaque</h2>
+            
+            <div id="trilhas-container" class="row g-4 justify-content-center">
+                </div>
+            </section>
+
+        <section class="newsletter-form p-5 bg-light rounded text-center mb-5 shadow-sm">
+            <h2 class="display-6 fw-bold text-success mb-4">Receba Nossas Novidades</h2>
+            <form class="subscribe-form mx-auto" style="max-width: 500px;">
+                <div class="mb-3 text-start">
+                    <label for="nome" class="form-label fw-bold">Seu Nome:</label>
+                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome Completo" required>
+                </div>
+                <div class="mb-3 text-start">
+                    <label for="email" class="form-label fw-bold">Seu E-mail:</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="email@exemplo.com" required>
+                </div>
+                <button type="submit" class="btn btn-warning btn-lg fw-bold">Assinar Newsletter</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="m-0">&copy; 2025 Aventure-se na Natureza. Todos os direitos reservados.</p>
+            <div class="social-links mt-2">
+                <a href="#" class="text-info mx-2">Facebook</a> | 
+                <a href="#" class="text-info mx-2">Instagram</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
