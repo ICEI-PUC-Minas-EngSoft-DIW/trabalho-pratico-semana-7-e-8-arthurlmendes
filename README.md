@@ -20,7 +20,9 @@ Leia o enunciado completo no Canvas.
 ## Print da Home-Page
 
 <<  COLOQUE A IMAGEM AQUI >>
-![Print da Homepage](imagens/r5.png)
+![Print da Homepage](imagens/r5.jpeg)
+![Print da homepage](public/r4.png)
+
 ## Print da página de detalhes do item
 
 <<  COLOQUE A IMAGEM AQUI >>
