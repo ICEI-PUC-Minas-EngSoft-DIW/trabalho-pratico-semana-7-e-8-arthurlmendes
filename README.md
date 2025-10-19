@@ -21,12 +21,15 @@ Leia o enunciado completo no Canvas.
 
 <<  COLOQUE A IMAGEM AQUI >>
 ![Print da Homepage](imagens/r5.jpeg)
-![Print da homepage](public/r4.png)
+
 
 ## Print da página de detalhes do item
 
 <<  COLOQUE A IMAGEM AQUI >>
+![Detalhes](imagens/r1.jpeg)
 ![Detalhes](imagens/r2.png)
+![Detalhes](imagens/r3.png)
+![Detalhes](imagens/r4.png)
 
 ## Cole aqui abaixo a estrutura JSON utilizada no app.js
 
