@@ -1,0 +1,64 @@
+/* Seu styles.css COMPLETO E ATUALIZADO */
+
+/* Estilos Gerais */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa; /* Fundo branco/claro */
+    color: #343a40;
+}
+
+/* Estilos de Cabeçalho (Verde Forte) */
+.site-header {
+    background-color: #28a745; /* Verde principal do Bootstrap (success) */
+    /* Garante que o cabeçalho seja sempre visível e com altura */
+    min-height: 60px; 
+    z-index: 10000;
+}
+
+.main-nav a:hover {
+    color: #d4edda;
+}
+
+/* Estilos da Hero Section */
+.hero-section {
+    /* NOVO LINK: Paisagem verde e mais condizente com o tema "Natureza" */
+    background: url('https://picsum.photos/id/1018/1600/600') no-repeat center center/cover;
+    color: #ffffff;
+}
+
+.hero-content {
+    /* Fundo semi-transparente para o texto */
+    background-color: rgba(0, 0, 0, 0.4); 
+    padding: 2rem !important;
+}
+
+/* Estilos Específicos de Conteúdo */
+.section-destaque h2 {
+    color: #28a745; /* Cor dos títulos das seções (Trilhas, Novidades) */
+}
+
+.card-title.text-success {
+    color: #28a745 !important; /* Títulos dos cards em verde */
+}
+
+.card {
+    border: 1px solid #ddd;
+}
+
+.newsletter-form {
+    background-color: #e2f0e8; /* Fundo do formulário (verde claro) */
+}
+
+/* Estilos do Rodapé */
+.bg-dark {
+    background-color: #343a40 !important; /* Cinza escuro */
+}
+
+.site-footer .social-links a {
+    color: #17a2b8;
+}
+
+.site-footer .social-links a:hover {
+    color: #138496;
+}

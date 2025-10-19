@@ -32,7 +32,7 @@ const DADOS_AVENTURAS = [
         "tempo_estimado": "5 dias",
         "descricao_breve": "Experiência imersiva no coração da Chapada Diamantina.",
         "conteudo_completo": "O Vale do Pati não é apenas uma trilha, mas um trekking de múltiplos dias. A área é remota e a hospedagem é feita em casas de nativos (campings rústicos ou quartos). É considerado um dos trekkings mais bonitos do Brasil e exige planejamento logístico rigoroso e contratação de guia local.",
-        "imagem": "https://picsum.photos/id/1020/400/250"
+        "imagem": "https://picsum.photos/id/1051/400/250"
     },
     {
         "id": 4,
